@@ -21,6 +21,7 @@ header summary {
   outline: none;
   padding: 0.5em;
   text-align: right;
+  -webkit-tap-highlight-color: transparent;
 }
 
 header summary::-webkit-details-marker {
@@ -45,6 +46,7 @@ header details[open] {
 header nav {
   background-color: #222;
   color: #eee;
+  margin-top: -1px;
 }
 
 main {
