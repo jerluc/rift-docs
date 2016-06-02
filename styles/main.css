@@ -67,6 +67,7 @@ main h3 {
 }
 
 main p {
+  font-size: 1.3em;
   line-height: 1.5em;
   margin-top: 0.25em;
 }
