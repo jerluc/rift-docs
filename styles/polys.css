@@ -1,0 +1,3 @@
+details:not([open]) > :not(summary) {
+  display: none;
+}

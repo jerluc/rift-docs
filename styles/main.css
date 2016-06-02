@@ -1,84 +1,69 @@
 header {
-  background-color: rgba(100, 200, 200, 1.0);
-  box-sizing: border-box;
-  font-family: 'Roboto Mono', monospace;
   position: fixed;
   left: 0;
+  width: 100%;
 }
 
-header > h1 {
+header details {
+  width: 100%;
+}
+
+header details[open] summary {
+  background-color: #222;
+}
+
+header summary {
+  background-color: #66bbbb;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: block;
+  outline: none;
+  padding: 0.5em;
+  text-align: right;
+}
+
+header summary::-webkit-details-marker {
+  display: none;
+}
+
+header h1 {
+  float: left;
   margin: 0;
+  margin-left: 0.1em;
   padding: 0;
 }
 
-header > h1 a {
-  display: flex;
-  align-items: center;
-}
-
-header > h1 img {
+header h1 img {
   height: 2em;
 }
 
-nav {
-  display: inline-block;
-  display: none;
-  align-self: center;
+header details[open] {
+  width: 100%;
 }
 
-nav > section {
-  display: block;
-}
-
-nav > section > h2 {
-  display: inline;
-  font-size: 1em;
-  font-weight: 400;
-  text-decoration: underline;
-  text-transform: uppercase;
-}
-
-nav > section > ul {
-  display: inline-block;
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-}
-
-nav > section > ul > li {
-  display: inline;
-  margin: 0;
-  padding: 0;
-}
-
-nav > section > ul > li::before {
-  content: '\5b';
-  color: #aaa;
-}
-
-nav > section > ul > li::after {
-  content: '\5d';
-  color: #aaa;
+header nav {
+  background-color: #222;
+  color: #eee;
 }
 
 main {
   box-sizing: border-box;
+  font-size: 1.5em;
   margin: 0 auto;
+  padding-top: 4em;
   text-align: justify;
+  width: 90vw;
 }
 
 main h2 {
-  /*background-color: #88dddd;*/
-  margin-bottom: 1em;
-  padding: 1em;
-  text-align: center;
+  font-size: 2em;
+  font-weight: 400;
 }
 
 main h3 {
   font-size: 1.5em;
-  font-weight: 500;
-  margin: 0;
-  padding: 0;
+  font-weight: 300;
 }
 
 main p {
@@ -86,10 +71,119 @@ main p {
   margin-top: 0.25em;
 }
 
-.big {
-  font-size: 1.5em;
-}
-
-em {
+mark {
   font-weight: 400;
 }
+
+figure img {
+  width: 100%;
+}
+
+figcaption {
+  color: #888;
+  font-style: italic;
+}
+
+@media(max-width: 720px) {
+  main {
+    font-size: 1em;
+    padding-top: 6em;
+  }
+}
+
+@media(min-width: 720px) {
+  header nav {
+    float: right;
+  }
+
+  main {
+    width: 720px;
+  }
+}
+
+
+
+
+
+/*!
+ * Hamburgers
+ * @description Tasty CSS-animated hamburgers
+ * @author Jonathan Suh @jonsuh
+ * @site https://jonsuh.com/hamburgers
+ * @link https://github.com/jonsuh/hamburgers
+ */
+.hamburger {
+  display: block;
+  transition-property: opacity, -webkit-filter;
+  transition-property: opacity, filter;
+  transition-property: opacity, filter, -webkit-filter;
+  transition-duration: 0.15s;
+  transition-timing-function: linear;
+  text-transform: none;
+  background-color: transparent;
+  border: 0;
+  margin: 0;
+  overflow: visible;
+}
+
+.hamburger-box {
+  width: 3em;
+  height: 4em;
+  display: inline-block;
+  position: relative;
+}
+
+.hamburger-inner {
+  display: block;
+  top: 50%;
+}
+
+.hamburger-inner, .hamburger-inner::before, .hamburger-inner::after {
+  width: 2.5em;
+  height: 0.15em;
+  background-color: #fff;
+  position: absolute;
+  transition-property: -webkit-transform;
+  transition-property: transform;
+  transition-property: transform, -webkit-transform;
+  transition-duration: 0.15s;
+transition-timing-function: ease; }
+.hamburger-inner::before, .hamburger-inner::after {
+  content: "";
+display: block; }
+.hamburger-inner::before {
+top: -10px; }
+.hamburger-inner::after {
+bottom: -10px; }
+
+
+/*
+ * Squeeze
+ */
+.hamburger--squeeze .hamburger-inner {
+  transition-duration: 0.1s;
+transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19); }
+.hamburger--squeeze .hamburger-inner::before {
+transition: top 0.1s 0.14s ease, opacity 0.1s ease; }
+.hamburger--squeeze .hamburger-inner::after {
+  transition: bottom 0.1s 0.14s ease, -webkit-transform 0.1s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  transition: bottom 0.1s 0.14s ease, transform 0.1s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+transition: bottom 0.1s 0.14s ease, transform 0.1s cubic-bezier(0.55, 0.055, 0.675, 0.19), -webkit-transform 0.1s cubic-bezier(0.55, 0.055, 0.675, 0.19); }
+
+.hamburger--squeeze[open] .hamburger-inner {
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+  transition-delay: 0.14s;
+transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1); }
+.hamburger--squeeze[open] .hamburger-inner::before {
+  top: 0;
+  opacity: 0;
+transition: top 0.1s ease, opacity 0.1s 0.14s ease; }
+.hamburger--squeeze[open] .hamburger-inner::after {
+  bottom: 0;
+  -webkit-transform: rotate(-90deg);
+  transform: rotate(-90deg);
+  transition: bottom 0.1s ease, -webkit-transform 0.1s 0.14s cubic-bezier(0.215, 0.61, 0.355, 1);
+  transition: bottom 0.1s ease, transform 0.1s 0.14s cubic-bezier(0.215, 0.61, 0.355, 1);
+transition: bottom 0.1s ease, transform 0.1s 0.14s cubic-bezier(0.215, 0.61, 0.355, 1), -webkit-transform 0.1s 0.14s cubic-bezier(0.215, 0.61, 0.355, 1); }
+
