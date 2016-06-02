@@ -1,0 +1,95 @@
+header {
+  background-color: rgba(100, 200, 200, 1.0);
+  box-sizing: border-box;
+  font-family: 'Roboto Mono', monospace;
+  position: fixed;
+  left: 0;
+}
+
+header > h1 {
+  margin: 0;
+  padding: 0;
+}
+
+header > h1 a {
+  display: flex;
+  align-items: center;
+}
+
+header > h1 img {
+  height: 2em;
+}
+
+nav {
+  display: inline-block;
+  display: none;
+  align-self: center;
+}
+
+nav > section {
+  display: block;
+}
+
+nav > section > h2 {
+  display: inline;
+  font-size: 1em;
+  font-weight: 400;
+  text-decoration: underline;
+  text-transform: uppercase;
+}
+
+nav > section > ul {
+  display: inline-block;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav > section > ul > li {
+  display: inline;
+  margin: 0;
+  padding: 0;
+}
+
+nav > section > ul > li::before {
+  content: '\5b';
+  color: #aaa;
+}
+
+nav > section > ul > li::after {
+  content: '\5d';
+  color: #aaa;
+}
+
+main {
+  box-sizing: border-box;
+  margin: 0 auto;
+  text-align: justify;
+}
+
+main h2 {
+  /*background-color: #88dddd;*/
+  margin-bottom: 1em;
+  padding: 1em;
+  text-align: center;
+}
+
+main h3 {
+  font-size: 1.5em;
+  font-weight: 500;
+  margin: 0;
+  padding: 0;
+}
+
+main p {
+  line-height: 1.5em;
+  margin-top: 0.25em;
+}
+
+.big {
+  font-size: 1.5em;
+}
+
+em {
+  font-weight: 400;
+}

@@ -1,0 +1,80 @@
+main section {
+  box-sizing: border-box;
+  font-size: 2em;
+  margin: 0;
+}
+
+main section:first-child {
+  background-color: #66bbbb;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh);
+}
+
+main section:first-child h2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 80%;
+}
+
+main section:first-child h2 div {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+main section:first-child h2 img {
+  height: 200px;
+}
+
+main section:first-child p {
+  font-weight: 400;
+  height: 20%;
+  margin: 1em auto;
+  text-align: center;
+}
+
+main section:first-child:after {
+  color: rgba(255, 255, 255, 0.5);
+  content: '\22ee';
+  display: block;
+  font-size: 1.5em;
+  font-weight: 200;
+  padding-bottom: 1em;
+  text-align: center;
+}
+
+main section h3 {
+  font-weight: 400;
+  margin: 0 auto;
+  padding: 2em 0 0;
+}
+
+main section p {
+  line-height: 1.8em;
+  margin: 2em auto 4em;
+}
+
+@media(max-width: 720px) {
+  main {
+    font-size: 12px;
+  }
+
+  main section p, main section h3 {
+    width: 90vw;
+  }
+}
+
+@media(min-width: 720px) {
+  main section > p {
+    margin-left: auto;
+    margin-right: auto;
+    width: 720px;
+  }
+
+  main section > h3 {
+    padding-left: calc((100vw - 720px) / 2);
+  }
+}
