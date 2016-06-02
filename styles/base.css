@@ -26,8 +26,9 @@ a:hover, a:active {
 
 footer {
   background-color: #222;
+  box-sizing: border-box;
   color: #eee;
-  margin: 0;
+  margin: 0 auto;
   padding: 4em 1em 2em;
 }
 
@@ -39,10 +40,14 @@ footer nav {
   padding: 0;
 }
 
+@media(max-width: 720px) {
+  footer > * {
+    width: 90vw;
+  }
+}
+
 @media(min-width: 720px) {
   footer > * {
-    margin-left: auto;
-    margin-right: auto;
     width: 720px;
   }
 }
