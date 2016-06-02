@@ -6,7 +6,7 @@
     <meta name="theme-color" content="#88dddd"/>
     <meta name="mobile-web-app-capable" content="yes"/>
     <meta name="generator" content="Nanoc <%= Nanoc::VERSION %>"/>
-    <title>rift - <%= @item[:title] %></title>
+    <title>Rift</title>
     <link rel="icon" href="/images/favicon.png"/>
     <link rel="stylesheet" href="/styles/base.css"/>
     <link rel="stylesheet" href="/styles/home.css"/>
@@ -15,9 +15,7 @@
     <main>
       <%= yield %>
     </main>
-    <footer>
-      <%= render '/footer.html' %>
-    </footer>
+    <%= render '/footer.html' %>
     <script>
       // Fixes some jumpy behavior with disappearing/reappearing address bar in Mobile Chrome
       document.querySelector('main section').setAttribute('style', 'height:' + window.innerHeight + 'px');

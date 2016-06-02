@@ -36,7 +36,7 @@ main section:first-child p {
   text-align: center;
 }
 
-main section:first-child:after {
+main section:first-child::after {
   color: rgba(255, 255, 255, 0.5);
   content: '\22ee';
   display: block;
@@ -68,13 +68,7 @@ main section p {
 }
 
 @media(min-width: 720px) {
-  main section > p {
-    margin-left: auto;
-    margin-right: auto;
+  main section p, main section h3 {
     width: 720px;
-  }
-
-  main section > h3 {
-    padding-left: calc((100vw - 720px) / 2);
   }
 }
