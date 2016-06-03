@@ -16,7 +16,7 @@ main section:first-child h2 {
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 70%;
+  height: 75%;
 }
 
 main section:first-child h2 div {
@@ -31,7 +31,7 @@ main section:first-child h2 img {
 
 main section:first-child p {
   font-weight: 400;
-  height: 30%;
+  height: 25%;
   margin: 1em auto;
   text-align: center;
 }
@@ -60,6 +60,12 @@ main section p {
 @media(max-height: 600px) {
   main section p {
     line-height: 1.5em;
+  }
+}
+
+@media(max-width: 320px) {
+  main section {
+    font-size: 1.8em;
   }
 }
 
