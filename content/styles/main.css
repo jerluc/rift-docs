@@ -53,9 +53,9 @@ main {
   box-sizing: border-box;
   font-size: 1.5em;
   margin: 0 auto;
+  padding: 1em;
   padding-top: 4em;
   text-align: justify;
-  width: 90vw;
 }
 
 main h2 {
@@ -91,6 +91,7 @@ figcaption {
   main {
     font-size: 1em;
     padding-top: 6em;
+    width: 100%;
   }
 }
 
@@ -150,14 +151,18 @@ figcaption {
   transition-property: transform;
   transition-property: transform, -webkit-transform;
   transition-duration: 0.15s;
-transition-timing-function: ease; }
+  transition-timing-function: ease;
+}
 .hamburger-inner::before, .hamburger-inner::after {
   content: "";
-display: block; }
+  display: block;
+}
 .hamburger-inner::before {
-top: -10px; }
+  top: -10px;
+}
 .hamburger-inner::after {
-bottom: -10px; }
+  bottom: -10px;
+}
 
 
 /*
@@ -165,28 +170,34 @@ bottom: -10px; }
  */
 .hamburger--squeeze .hamburger-inner {
   transition-duration: 0.1s;
-transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19); }
+  transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
 .hamburger--squeeze .hamburger-inner::before {
-transition: top 0.1s 0.14s ease, opacity 0.1s ease; }
+  transition: top 0.1s 0.14s ease, opacity 0.1s ease;
+}
 .hamburger--squeeze .hamburger-inner::after {
   transition: bottom 0.1s 0.14s ease, -webkit-transform 0.1s cubic-bezier(0.55, 0.055, 0.675, 0.19);
   transition: bottom 0.1s 0.14s ease, transform 0.1s cubic-bezier(0.55, 0.055, 0.675, 0.19);
-transition: bottom 0.1s 0.14s ease, transform 0.1s cubic-bezier(0.55, 0.055, 0.675, 0.19), -webkit-transform 0.1s cubic-bezier(0.55, 0.055, 0.675, 0.19); }
+  transition: bottom 0.1s 0.14s ease, transform 0.1s cubic-bezier(0.55, 0.055, 0.675, 0.19), -webkit-transform 0.1s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
 
 .hamburger--squeeze[open] .hamburger-inner {
   -webkit-transform: rotate(45deg);
   transform: rotate(45deg);
   transition-delay: 0.14s;
-transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1); }
+  transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+}
 .hamburger--squeeze[open] .hamburger-inner::before {
   top: 0;
   opacity: 0;
-transition: top 0.1s ease, opacity 0.1s 0.14s ease; }
+  transition: top 0.1s ease, opacity 0.1s 0.14s ease;
+}
 .hamburger--squeeze[open] .hamburger-inner::after {
   bottom: 0;
   -webkit-transform: rotate(-90deg);
   transform: rotate(-90deg);
   transition: bottom 0.1s ease, -webkit-transform 0.1s 0.14s cubic-bezier(0.215, 0.61, 0.355, 1);
   transition: bottom 0.1s ease, transform 0.1s 0.14s cubic-bezier(0.215, 0.61, 0.355, 1);
-transition: bottom 0.1s ease, transform 0.1s 0.14s cubic-bezier(0.215, 0.61, 0.355, 1), -webkit-transform 0.1s 0.14s cubic-bezier(0.215, 0.61, 0.355, 1); }
+  transition: bottom 0.1s ease, transform 0.1s 0.14s cubic-bezier(0.215, 0.61, 0.355, 1), -webkit-transform 0.1s 0.14s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
 
