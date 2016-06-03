@@ -36,7 +36,7 @@ main section:first-child p {
   text-align: center;
 }
 
-main section:first-child:after {
+main section:first-child::after {
   color: rgba(255, 255, 255, 0.5);
   content: '\22ee';
   display: block;

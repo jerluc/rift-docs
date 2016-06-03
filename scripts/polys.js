@@ -2,6 +2,7 @@ var fillDetails = function() {
   if ('open' in document.createElement('details')) {
     return;
   }
+
   var detailses = document.querySelectorAll('details');
   for (var i = 0; i < detailses.length; i++) {
     var details = detailses[i];
