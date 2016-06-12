@@ -65,11 +65,20 @@ main h2 {
 
 main h3 {
   font-size: 1.5em;
+  font-weight: 400;
+  font-style: italic;
+}
+
+main h4 {
+  color: #666;
+  font-size: 1.1em;
   font-weight: 300;
+  margin: 0;
+  text-transform: uppercase;
 }
 
 main p {
-  font-size: 1.3em;
+  font-size: 1.1em;
   line-height: 1.5em;
   margin-top: 0.25em;
 }
