@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="theme-color" content="#88dddd"/>
+    <meta name="mobile-web-app-capable" content="yes"/>
+    <meta name="generator" content="Nanoc <%= Nanoc::VERSION %>"/>
+    <title>Rift - <%= @item[:title] %></title>
+    <link rel="icon" href="/images/favicon.png"/>
+    <link rel="stylesheet" href="/styles/base.css"/>
+    <link rel="stylesheet" href="/styles/doc.css"/>
+    <link rel="stylesheet" href="/styles/polys.css"/>
+  </head>
+  <body>
+    <%= render '/header.html' %>
+    <main>
+      <%= yield %>
+    </main>
+    <%= render '/footer.html' %>
+    <script src="scripts/polys.js"></script>
+    <script src="scripts/ui.js"></script>
+    <script src="scripts/instrumentation.js"></script>
+  </body>
+</html>

@@ -95,16 +95,3 @@ deploy:
     remote: git@github.com:jerluc/rift-docs.git
     branch: gh-pages
 
-toc:
-  - /intro:
-    - /about
-    - /audience
-  - /overview:
-    - /architecture
-    - /protocol
-    - /security
-  - /programming:
-    - /sockets
-    - /example
-  - /philosophy:
-  - /contributing:

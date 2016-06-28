@@ -1,3 +1,18 @@
 <footer>
-  <%= render '/nav.html' %>
+  <section>
+    <aside>
+    <% if @item[:prev] %>
+      Previous:
+      <br />
+      <a href="<%= @item[:prev] %>"><%= title_for_url(@item[:prev]) %></a>
+    <% end %>
+    </aside>
+    <aside>
+    <% if @item[:next] %>
+      Next up:
+      <br />
+      <a href="<%= @item[:next] %>"><%= title_for_url(@item[:next]) %></a>
+    <% end %>
+    </aside>
+  </section>
 </footer>
