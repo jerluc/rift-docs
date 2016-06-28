@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="theme-color" content="#88dddd"/>
+    <meta name="mobile-web-app-capable" content="yes"/>
+    <meta name="generator" content="Nanoc 4.1.6"/>
+    <title>Rift - Introduction</title>
+    <link rel="icon" href="/images/favicon.png"/>
+    <link rel="stylesheet" href="/styles/base.css"/>
+    <link rel="stylesheet" href="/styles/doc.css"/>
+    <link rel="stylesheet" href="/styles/polys.css"/>
+  </head>
+  <body>
+    <header>
+  <details class="hamburger hamburger--squeeze">
+	<summary>
+	  <h1>
+		<a href="/"><img style="height: 2em" src="/images/rift-icon-white.svg" alt="Rift"/></a>
+	  </h1>
+      <div class="hamburger-box"><div class="hamburger-inner"></div></div>
+    </summary>
+    <nav>
+  <section>
+    <h4>Documentation</h4>
+    <ul>
+      <li><a href="/introduction.html">Introduction</a></li>
+      <li><a href="/overview.html">Technical overview</a></li>
+    </ul>
+    <h4>Get involved</h4>
+    <ul>
+      <li><a href="/community.html">Community</a></li>
+    </ul>
+  </section>
+</nav>
+
+  </details>
+</header>
+
+    <main>
+      
+<section id="top">
+  <h2>Introduction</h2>
+  <ol id="toc">
+    <li><a href="#what-is-rift">What is Rift?</a></li>
+    <li><a href="#motivations">Motivations</a></li>
+    <li><a href="#philosophy">Philosophy</a></li>
+    <li><a href="#scope">Scope</a></li>
+  </ol>
+</section>
+
+<section id="what-is-rift">
+  <h3>What is Rift?</h3>
+  <p>
+    Rift is an infrastructure-less network stack, built specifically to solve the unique
+    connectivity problems that arise in modern Internet of Things applications. It <em>does not</em>
+    aim to replace the use of existing protocol stacks (such as IP) in general applications, but
+    rather intends to supplement the evolving IoT ecosystem by providing simple and lightweight
+    peer-to-peer connectivity that can be deployed without the need for infrastructure such as
+    network routers, cellular towers, satellites, etc.
+  </p>
+</section>
+
+<section id="motivations">
+  <h3>Motivations</h3>
+  <p>
+    Today's Internet of Things devices all seem to share at least one thing in common: they require
+    an Internet connection. This may come as no surprise considering the "I" in "IoT", but it has
+    resulted in some suboptimal, if not awkward, solutions.
+  </p>
+  <h4>Example: "smart light bulb"</h4>
+  <p>
+    Smart light bulbs are a smart home consumer product that have become increasingly popular in
+    recent years. They allow a user to wirelessly control a set of light bulbs using an
+    Internet-connected device (e.g. a smartphone).
+  </p>
+  <figure>
+    <img src="/images/smart-light-bulb.png" alt="A typical smart light bulb setup"/>
+    <figcaption>
+      A diagram representing a typical smart light bulb setup in the smart home environment.
+    </figcaption>
+  </figure>
+  <p>
+    To enable this kind of remote control, smart light bulbs are configured to join a wireless LAN
+    with Internet connectivity. Typically, a set of light bulbs are configured and controlled
+    through a "hub" device; this allows the light bulbs to be controlled from a single access point,
+    rather than having to configure/control each bulb individually. Hub devices are normally
+    configured to manage only a specific set of nearby light bulbs and also must be able to access a
+    cloud-based control service for receiving remote control commands.
+  </p>
+  <p>
+    When remotely controlling the light bulbs, the controlling device connects and authenticates to
+    the same control service, and then issues the desired commands (e.g. "ON", "OFF", "DIM(25%)",
+    etc). Upon receiving these commands, the control service then relays the commands to the
+    connected hub device, which in turn relays the command to each connected light bulb.
+  </p>
+  <p>
+    An obvious problem in this setup is that a persistent Internet connection is required during
+    times of operation in order to guarantee normal operation and quality of service. Furthermore,
+    for most consumers, the ability to remotely operate a set of light bulbs from anywhere with an
+    Internet connection is <em>not</em> as typical of a use case as local operation or the
+    integration of the smart light bulbs with other nearby smart home appliances.
+  </p>
+  <h4>Example: "location-based directory"</h4>
+  <p>
+    Location-based directories allow a device to obtain a listing of nearby places using location
+    services. A common example of this application is the use of GPS on a smartphone to discovery
+    a listing of stores in a shopping mall.
+  </p>
+  <figure>
+    <img src="/images/location-based-directory.png" alt="Location-based directory"/>
+    <figcaption>
+      A diagram showing how location-based directories use location services such as GPS to deliver
+      listings of nearby places and things.
+    </figcaption>
+  </figure>
+  <p>
+    To retrieve a list of nearby places, a smartphone uses passive GPS to locate the device's
+    <em>global</em> coordinates. Once located, the GPS coordinates are then used to query against a
+    cloud-based geo-search index, resulting in a list of nearby locations. Sometimes, as in the case
+    of a well-defined point of interest such as a shopping mall, a process known as "reverse
+    geocoding" can also be used to translate the GPS coordinates into an approximate address which
+    is then used to look up a predefined directory listing for that address.
+  </p>
+  <p>
+    In other words, in order to retrieve a location-based directory, a smartphone must ping an
+    orbiting satellite in order to figure out which stores are in a mall right in front of you.
+  </p>
+  <p class="needs-work">
+    It is for these reasons and plenty more that we must continue to innovate in IoT connectivity.
+  </p>
+</section>
+
+<section id="philosophy">
+  <h3>Philosophy</h3>
+  <p>
+    To ensure a common understanding for the direction of the project, Rift is being developed with
+    a few guiding principles:
+  </p>
+  <h4>Infrastructure-less</h4>
+  <p>
+    Rift employs existing wireless standards used for direct peer-to-peer connectivity. The result
+    is an incredibly flexible network environment whose structure and services evolve with the needs
+    of the participants. This is important for allowing software and hardware engineers to rapidly
+    build and iterate on devices and applications without the major infrastructural and physical
+    limitations of a network router, cellular tower, satellite, etc.
+  </p>
+  <h4>Simple and generic</h4>
+  <p>
+    The Rift architecture uses simple network primitives as the foundations of its application
+    interface. These primitives are used solely for abstracting more complex and fine-grained
+    network semantics into a network "language". This allows future wire[d|less] technologies to be
+    ported and plugged in to existing applications. Furthermore, it is important to provide
+    interoperability between Rift and non-Rift networks.
+  </p>
+  <h4>Portable</h4>
+  <p>
+    As is the nature of the IoT industry, Rift is intended to be run on a multitude of devices of
+    different CPU architectures, power profiles, and in any environment. The network should strive
+    to not be the limiting factor in IoT hardware or software design.
+  </p>
+  <h4>Good for humans, fair for business</h4>
+  <p>
+    The project itself aims to be inherently good for humans, and fair for businesses. We intend to
+    keep it this way by keeping Rift implementations and designs open and community-driven.
+    Furthermore, given the sensitive nature of the data transmitted through IoT technologies, we
+    aim to keep privacy concerns (data collection, user identities, behavior tracking, etc) at the
+    forefront of the discussion. This has been, and will continue to be an ongoing discussion.
+  </p>
+</section>
+
+<section id="scope">
+  <h3>Scope</h3>
+  <p>
+    This documentation aims to provide a brief, but conceptually complete description of the Rift
+    network stack.
+  </p>
+  <p>
+    The information herein should be sufficient for any technical practitioner to:
+  </p>
+  <ul>
+    <li>Gain further insight into the unique connectivity problems of IoT networks</li>
+    <li>Develop an understanding of how the Rift network stack addresses each of these problems</li>
+    <li>Begin to integrate Rift concepts (and soon, code!) into new and existing IoT products</li>
+  </ul>
+  <p>
+    However, as it is impossible to develop a complete understanding of these technologies from
+    static documentation, please see our <a href="/community.html">community documentation</a> for
+    any questions, comments, banter, and general discussions.
+  </p>
+</section>
+
+    </main>
+    <footer>
+  <section>
+    <aside>
+    
+    </aside>
+    <aside>
+    
+      Next up:
+      <br />
+      <a href="/overview.html">Technical overview</a>
+    
+    </aside>
+  </section>
+</footer>
+
+    <script src="scripts/polys.js"></script>
+    <script src="scripts/ui.js"></script>
+    <script src="scripts/instrumentation.js"></script>
+  </body>
+</html>

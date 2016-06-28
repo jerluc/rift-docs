@@ -19,47 +19,6 @@ a:hover, a:active {
   color: #28a;
 }
 
-nav {
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: row;
-  font-size: 1.25em;
-  align-items: top;
-  margin: 0 auto;
-  padding: 1em;
-}
-
-nav section {
-  flex: 1 1;
-  margin-right: 1em;
-}
-
-nav section h4 {
-  font-weight: 300;
-  margin: 0.5em auto;
-  text-transform: uppercase;
-}
-
-nav section ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-}
-
-footer {
-  background-color: #eee;
-  box-sizing: border-box;
-  color: #333;
-  margin: 8em auto 0;
-  padding: 4em 0 2em;
-}
-
-@media(min-width: 720px) {
-  nav {
-    width: 720px;
-  }
-}
-
 @media(max-width: 320px) {
   body {
     font-size: 12px;
